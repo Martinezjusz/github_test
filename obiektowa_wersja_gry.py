@@ -22,7 +22,7 @@ class PelnoetatowyPracownik(Pracownik):
         print(f"Przyznany urlop: {self.urlop} dni")
     
     def oblicz_wynagrodzenie(self):
-        bonus = self.urlop * 50  # Za każdy dzień urlopu bonus 50 PLN
+        bonus = self.urlop * 50
         return self.pensja + bonus
 
 class Kontraktor(Pracownik):
