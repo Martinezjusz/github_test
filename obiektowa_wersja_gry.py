@@ -6,18 +6,7 @@ Edit 1
 Edit 2
 Edit 3
 Edit 4
-    def rysuj_mete(self):
-        kolor_linii_mety = ['white', 'black']
-        kolor = 0
-
-        meta = turtle.Turtle()
-        meta.penup()
-        meta.color('black')
-        meta.pensize(10)
-        meta.goto(283, 300)
-        meta.pendown()
-        meta.speed(0)
-        meta.setheading(270)
+Edit 5
 
         for _ in range(100):
             meta.color(kolor_linii_mety[kolor])
