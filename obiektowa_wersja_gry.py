@@ -5,6 +5,7 @@ import time
 Edit 1
 Edit 2
 Edit 3
+Edit 4
     def rysuj_mete(self):
         kolor_linii_mety = ['white', 'black']
         kolor = 0
