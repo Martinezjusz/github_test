@@ -3,17 +3,7 @@ import random
 import time
 
 
-class Zolw:
-    def __init__(self, color, start_x, start_y):
-        self.turtle = turtle.Turtle()
-        self.turtle.shape("turtle")
-        self.turtle.color(color)
-        self.turtle.penup()
-        self.turtle.speed(0)
-        self.turtle.goto(start_x, start_y)
-        self.turtle.zakres_losowania = [2, 6]
-        self.turtle.showturtle()
-
+JD
     def move(self):
         self.turtle.forward(random.randint(self.turtle.zakres_losowania[0], self.turtle.zakres_losowania[1]))
 
