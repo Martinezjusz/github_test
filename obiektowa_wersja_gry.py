@@ -1,56 +1,51 @@
-import turtle
-import random
-import time
+class Pracownik:
+    def __init__(self, imie, stanowisko, pensja):
+        self.imie = imie
+        self.stanowisko = stanowisko
+        self.pensja = pensja
+    
+    def przedstaw_sie(self):
+        print(f"Imię: {self.imie}")
+        print(f"Stanowisko: {self.stanowisko}")
+        print(f"Pensja: {self.pensja} PLN")
+    
+    def oblicz_wynagrodzenie(self):
+        return self.pensja
 
-Edit 1
-Edit 2
-Edit 3
-Edit 4
-Edit 5
+class PelnoetatowyPracownik(Pracownik):
+    def __init__(self, imie, stanowisko, pensja, urlop):
+        super().__init__(imie, stanowisko, pensja)
+        self.urlop = urlop
+    
+    def przedstaw_sie(self):
+        super().przedstaw_sie()
+        print(f"Przyznany urlop: {self.urlop} dni")
+    
+    def oblicz_wynagrodzenie(self):
+        bonus = self.urlop * 50  # Za każdy dzień urlopu bonus 50 PLN
+        return self.pensja + bonus
 
-        for _ in range(100):
-            meta.color(kolor_linii_mety[kolor])
-            meta.forward(9)
-            kolor = 1 - kolor
+class Kontraktor(Pracownik):
+    def __init__(self, imie, stanowisko, stawka_godzinowa, godziny_pracy):
+        super().__init__(imie, stanowisko, 0)  # Kontraktor nie ma stałej pensji
+        self.stawka_godzinowa = stawka_godzinowa
+        self.godziny_pracy = godziny_pracy
+    
+    def przedstaw_sie(self):
+        super().przedstaw_sie()
+        print(f"Stawka godzinowa: {self.stawka_godzinowa} PLN")
+        print(f"Liczba godzin pracy: {self.godziny_pracy}")
+    
+    def oblicz_wynagrodzenie(self):
+        return self.stawka_godzinowa * self.godziny_pracy
 
-    def stworz_zolwie(self):
-        kolory = ['red', 'green', 'blue', 'brown', 'pink']
-        for i in range(len(kolory)):
-            zolw = Zolw(kolory[i], -280, -220 + i * 100)
-            self.zolwie.append(zolw)
+pracownik_etatowy = PelnoetatowyPracownik("Anna Kowalska", "Kierownik Projektu", 8000, 20)
+kontraktor = Kontraktor("Jan Nowak", "Programista", 100, 160)
 
-    def zwiekszanie_zakresu(self):
-        for zolw in self.zolwie:
-            if zolw.get_color() == self.odpowiedz:
-                zolw.zwieksz_zakres()
+print("Pracownik etatowy:")
+pracownik_etatowy.przedstaw_sie()
+print(f"Wynagrodzenie: {pracownik_etatowy.oblicz_wynagrodzenie()} PLN\n")
 
-    def gra(self):
-        self.rysuj_mete()
-        self.stworz_zolwie()
-
-        self.odpowiedz = self.screen.textinput("Zakład", "Na którego żółwia obstawiasz? (red/green/blue/brown/pink)")
-
-        self.screen.listen()
-        self.screen.onkey(self.zwiekszanie_zakresu, "a")
-
-        game_on = True
-
-        while game_on:
-            self.screen.update()
-            for zolw in self.zolwie:
-                zolw.move()
-                time.sleep(0.015)
-                if zolw.get_position()[0] > 275:
-                    self.wygrany = zolw.get_color()
-                    game_on = False
-
-        if self.odpowiedz == self.wygrany:
-            print("Gratulacje! Wygrałeś!")
-        else:
-            print(f"Niestety, przegrałeś. Wygrał żółw o kolorze {self.wygrany}")
-
-        self.screen.exitonclick()
-
-
-wyscig = Wyscig()
-wyscig.gra()
+print("Kontraktor:")
+kontraktor.przedstaw_sie()
+print(f"Wynagrodzenie: {kontraktor.oblicz_wynagrodzenie()} PLN")
