@@ -2,21 +2,9 @@ import turtle
 import random
 import time
 
-
-JD
-JD
-
-class Wyscig:
-    def __init__(self):
-        self.screen = turtle.Screen()
-        self.screen.title("Wyścig żółwi")
-        self.screen.bgcolor("lightblue")
-        self.screen.setup(width=600, height=600)
-        self.screen.tracer(0)
-        self.zolwie = []
-        self.wygrany = None
-        self.odpowiedz = None
-
+Edit 1
+Edit 2
+Edit 3
     def rysuj_mete(self):
         kolor_linii_mety = ['white', 'black']
         kolor = 0
