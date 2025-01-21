@@ -4,19 +4,7 @@ import time
 
 
 JD
-    def move(self):
-        self.turtle.forward(random.randint(self.turtle.zakres_losowania[0], self.turtle.zakres_losowania[1]))
-
-    def get_position(self):
-        return self.turtle.position()
-
-    def get_color(self):
-        return self.turtle.color()[0]
-
-    def zwieksz_zakres(self):
-        self.turtle.zakres_losowania[0] += 1
-        self.turtle.zakres_losowania[1] += 1
-
+JD
 
 class Wyscig:
     def __init__(self):
